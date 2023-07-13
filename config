@@ -51,9 +51,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+# bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-# bindcode $mod+40 exec "rofi -modi drun,run -show drun"
+bindsym $mod+d exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -132,6 +132,17 @@ bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
+# this doesn't work
+# bindcode $mod+87 workspace number $ws1
+# bindcode $mod+88 workspace number $ws2
+# bindcode $mod+89 workspace number $ws3
+# bindcode $mod+83 workspace number $ws4
+# bindcode $mod+84 workspace number $ws5
+# bindcode $mod+85 workspace number $ws6
+# bindcode $mod+79 workspace number $ws7
+# bindcode $mod+80 workspace number $ws8
+# bindcode $mod+81 workspace number $ws9
+# bindcode $mod+90 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -188,3 +199,29 @@ bar {
 
 # some maybe interesting things
 workspace_auto_back_and_forth yes
+
+# Sreen brightness controls
+# increase screen brightness
+# bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+# decrease screen brightness
+# bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+
+# Touchpad controls
+# toggle touchpad
+bindsym XF86TouchpadToggle exec ./toggletouchpad.sh
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+focus_follows_mouse no
+mouse_warping none
+
+# temp solution
+exec ~/.screenlayout/1440pMain-LaptopRight.sh
+
+# binding programs to workspaces
+assign [class="Firefox-esr"] $ws2
+assign [class="TelegramDesktop"] $ws10
