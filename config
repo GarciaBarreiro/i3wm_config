@@ -194,7 +194,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         position top
-        status_command i3status
+        status_command ~/.config/i3/i3status.sh
 }
 
 # some maybe interesting things
@@ -225,3 +225,7 @@ exec ~/.screenlayout/1440pMain-LaptopRight.sh
 # binding programs to workspaces
 assign [class="Firefox-esr"] $ws2
 assign [class="TelegramDesktop"] $ws10
+
+# change keyboard layout
+exec "setxkbmap -layout us,es"
+exec "setxkbmap -option 'grp:alt_shift_toggle'"
