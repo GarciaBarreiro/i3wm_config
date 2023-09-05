@@ -36,8 +36,8 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -263,9 +263,11 @@ exec ~/.screenlayout/1440pMain-LaptopRight.sh
 assign [class="Firefox-esr"] $ws2
 assign [class="Spotify"] $ws9
 assign [class="TelegramDesktop"] $ws10
+assign [class="WhatsApp"] $ws10
 
 # telegram as floating window
 for_window [class="TelegramDesktop"] floating enable
+for_window [class="WhatsApp"] floating enable
 
 # gaps
 gaps inner 5
@@ -285,3 +287,7 @@ bindsym $mod+Ctrl+Right move workspace to output right
 bindsym $mod+Ctrl+l move workspace to output right
 bindsym $mod+Ctrl+Left move workspace to output left
 bindsym $mod+Ctrl+h move workspace to output left
+
+# screenshots
+bindsym Print exec scrot -e \'xclip -selection clipboard -t image/png -i $f\'
+# -s doesn't work
