@@ -257,7 +257,7 @@ focus_follows_mouse no
 mouse_warping none
 
 # temp solution
-exec ~/.screenlayout/1440pMain-LaptopRight.sh
+exec --no-startup-id xfce4-terminal -x ./layouts.sh
 
 # binding programs to workspaces
 assign [class="Firefox-esr"] $ws2
