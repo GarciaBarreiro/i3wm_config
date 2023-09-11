@@ -21,4 +21,7 @@ else
     echo "ERROR"
 fi
 
+# after changing layout, feh stops displaying bg properly
+exec feh --bg-fill ~/Pictures/great-wave-off-kanagawa.jpeg
+
 exit
