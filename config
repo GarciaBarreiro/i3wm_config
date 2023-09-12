@@ -289,5 +289,7 @@ bindsym $mod+Ctrl+Left move workspace to output left
 bindsym $mod+Ctrl+h move workspace to output left
 
 # screenshots
-bindsym Print exec scrot -e \'xclip -selection clipboard -t image/png -i $f\'
-# -s doesn't work
+# pastes to clipboard
+bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+# saves on ~/Pictures/Screenshots/
+bindsym Ctrl+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date)"
