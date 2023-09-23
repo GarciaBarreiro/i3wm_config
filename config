@@ -257,7 +257,7 @@ focus_follows_mouse no
 mouse_warping none
 
 # temp solution
-exec --no-startup-id xfce4-terminal -x ~/.config/i3/layouts.sh
+exec --no-startup-id xfce4-terminal -x ~/.config/i3/layouts.sh && feh --bg-fill ~/Pictures/great-wave-off-kanagawa.jpeg
 
 # binding programs to workspaces
 assign [class="Firefox-esr"] $ws2
@@ -275,7 +275,7 @@ gaps outer 5
 smart_gaps on
 
 # wallpaper
-exec --no-startup-id feh --bg-fill ~/Pictures/great-wave-off-kanagawa.jpeg
+# exec --no-startup-id feh --bg-fill ~/Pictures/great-wave-off-kanagawa.jpeg
 
 # disable laptop beep
 exec --no-startup-id xset b off
@@ -290,6 +290,8 @@ bindsym $mod+Ctrl+h move workspace to output left
 
 # screenshots
 # pastes to clipboard
-bindsym Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Print exec --no-startup-id maim -f png --select | xclip -selection clipboard -t image/png
+bindsym Shift+Print exec --no-startup-id maim -f png -u -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png
 # saves on ~/Pictures/Screenshots/
-bindsym Ctrl+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date)"
+bindsym Ctrl+Print exec --no-startup-id maim -f png --select "/home/$USER/Pictures/Screenshots/$(date).png"
+bindsym Ctrl+Shift+Print exec --no-startup-id maim -f png -u -i "$(xdotool getactivewindow)" "/home/$USER/Pictures/Screenshots/$(date).png"
