@@ -260,7 +260,7 @@ bar {
 # colors
 # class                 border  backgr. text    indicator child_border
 client.focused          #4c7899 #285577 #ffffff #4c7899   #4c7899
-client.focused_inactive #333333 #5f676a #ffffff #333333   #333333
+client.focused_inactive #666666 #444444 #ffffff #666666   #666666
 client.unfocused        #333333 #222222 #888888 #333333   #333333
 client.urgent           #900000 #600000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
