@@ -323,8 +323,8 @@ bindsym $mod+Ctrl+h move workspace to output left
 
 # screenshots
 # pastes to clipboard
-bindsym Print exec --no-startup-id maim -f png --select | xclip -selection clipboard -t image/png
+bindsym Print exec --no-startup-id maim -f png -u --select | xclip -selection clipboard -t image/png
 bindsym Shift+Print exec --no-startup-id maim -f png -u -i "$(xdotool getactivewindow)" | xclip -selection clipboard -t image/png
 # saves on ~/Pictures/Screenshots/
-bindsym Ctrl+Print exec --no-startup-id maim -f png --select "/home/$USER/Pictures/Screenshots/$(date).png"
+bindsym Ctrl+Print exec --no-startup-id maim -f png -u --select "/home/$USER/Pictures/Screenshots/$(date).png"
 bindsym Ctrl+Shift+Print exec --no-startup-id maim -f png -u -i "$(xdotool getactivewindow)" "/home/$USER/Pictures/Screenshots/$(date).png"
